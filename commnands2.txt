@@ -1,0 +1,562 @@
+    1  sudo apt update && sudo apt upgrade -y
+    2  for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    3  # Add Docker's official GPG key:
+    4  sudo apt-get update
+    5  sudo apt-get install ca-certificates curl
+    6  sudo install -m 0755 -d /etc/apt/keyrings
+    7  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    8  sudo chmod a+r /etc/apt/keyrings/docker.asc
+    9  # Add the repository to Apt sources:
+   10  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+   11    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   12  sudo apt-get update
+   13  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   14  docker --version
+   15  sudo usermod -aG docker ubuntu
+   16  exit
+   17  groups
+   18  sudo -su ubuntu
+   19  groups
+   20  sudo su - ubuntu
+   21  groups
+   22  docker ps
+   23  mkdir flask_docker_app
+   24  cd flask_docker_app
+   25  sudo apt install python3-venv -y
+   26  python3 -m venv venv
+   27  source venv/bin/activate
+   28  pip install Flask
+   29  vim app.py
+   30  pip freeze > requirements.txt
+   31  groups
+   32  sudo su - ubuntu
+   33  vim Dockerfile
+   34  docker build -t flask-docker-app .
+   35  pwd
+   36  ls -la
+   37  pip freeze > requirements.txt
+   38  sudo apt install python3-pip
+   39  docker build -t flask-docker-app .
+   40  docker run -d -p 5000:5000 flask-docker-app
+   41  curl http://3.84.51.18:5000
+   42  docker run -d -p 5000:5000 flask-docker-app
+   43  curl http://3.84.51.18:5000
+   44  docker ps
+   45  docker ps -a
+   46  docker logs befbf363c5f8
+   47  ls -la
+   48  vim app.py
+   49  ls -la
+   50  cat Dockerfile
+   51  docker stop befbf363c5f8
+   52  docker stop 7592d35e399d
+   53  docker rm befbf363c5f8
+   54  docker rm 7592d35e399d
+   55  docker ps -a
+   56  docker build -t flask-docker-app .
+   57  docker images
+   58  docker rmi 4359da9244f2
+   59  docker images
+   60  docker run --rm flask-docker-app ls -la /app
+   61  docker ps -a
+   62  docker images
+   63  docker run -d -p 5000:5000 flask-docker-app
+   64  docker ps -a
+   65  docker logs 200393cd020e
+   66  cat requirements.txt
+   67  echo "Flask==2.0.1" > requirements.txt
+   68  cat requirements.txt
+   69  vim  Dockerfile
+   70  docker build -t flask-docker-app . --no-cache
+   71  docker images
+   72  docker rmi 7b4101452f85
+   73  docker ps -a
+   74  docker stop 200393cd020e
+   75  docker rm 200393cd020e
+   76  docker rmi 7b4101452f85
+   77  docker images
+   78  docker run -d -p 5000:5000 flask-docker-app
+   79  curl http://3.84.51.18:5000
+   80  curl http://172.31.95.13:5000
+   81  docker ps
+   82  docker ps -a
+   83  docker start $(docker ps -aq --filter ancestor=flask-docker-app --latest)
+   84  docker ps -a
+   85  docker logs $(docker ps -aq --filter ancestor=flask-docker-app --latest)
+   86  vim requirements.txt 
+   87  docker images
+   88  docker rmi ad855d8fb54e
+   89  #docker stop 200393cd020e
+   90  docker ps -a
+   91  docker stop a256c89f6340
+   92  docker rmi a256c89f6340
+   93  docker ps -a
+   94  docker stop gifted_ramanujan
+   95  docker rmi gifted_ramanujan
+   96  docker rm gifted_ramanujan
+   97  vim  Dockerfile
+   98  docker build -t flask-docker-app .
+   99  docker run -d -p 5000:5000 flask-docker-app
+  100  curl http://3.84.51.18:5000
+  101  docker run -d -p 5000:5000 flask-docker-app
+  102  curl http://172.31.95.13:5000
+  103  docker login
+  104  docker login -u bettysami
+  105  docker login
+  106  docker login -u bettysami
+  107  #docker tag flask-docker-app bettysami/flask-docker-app
+  108  docker tag flask-docker-app bettysami/flask-docker-app
+  109  docker push bettysami/flask-docker-app
+  110  sudo apt install docker-compose -y
+  111  vim docker-compose-flask.yaml
+  112  vim nginx.conf
+  113  docker-compose -f docker-compose-flask.yaml up -d
+  114  cat docker-compose-flask.yaml
+  115  vim docker-compose-flask.yaml
+  116  docker-compose -f docker-compose-flask.yaml up -d
+  117  docker-compose -f docker-compose-flask.yaml down
+  118  docker-compose -f docker-compose-flask.yaml up -d
+  119  docker-compose -f docker-compose-flask.yaml ps
+  120  git init
+  121  git add .
+  122  git commit -m "Initial commit with Docker and Flask setup"
+  123  git remote add origin https://github.com/la-belle-femme/REVISION-DOCKER.git
+  124  git pull origin main --allow-unrelated-histories
+  125  git add .
+  126  git commit -m "Merge remote changes and resolve conflicts"
+  127  git push -u origin main
+  128  git branch
+  129  git ls-remote --heads origin
+  130  git branch -m master main
+  131  git push -u origin master
+  132  git branch
+  133  git push -u origin main
+  134  git branch
+  135  git push -u origin main
+  136  git config --global credential.helper store
+  137  git push -u origin main
+  138  git fetch origin
+  139  git pull --rebase origin main
+  140  git rebase --continue
+  141  git push -u origin main --force
+  142  history
+  143  history > commands.txt
+  144  cat commands.txt 
+  145  ls commands.txt
+  146  vim commands.txt
+  147  history
+  148  vim commands1.txt
+  149  git add .
+  150  git commit -m "saved the history of commands used"
+  151  git push -u origin main 
+  152  git push -u origin main --force
+  153  git pull -u origin main --force
+  154  git pull -u origin main 
+  155  ls -ltr
+  156  cat app.py 
+  157  clear
+  158  cat > app.py << EOL
+  159  from flask import Flask
+  160  import socket
+  161  import datetime  # Added import for datetime
+  162  app = Flask(__name__)
+  163  @app.route('/')
+  164  def hello():
+  165      hostname = socket.gethostname()
+  166      current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+  167      return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}"
+  168  if __name__ == '__main__':
+  169      app.run(host='0.0.0.0', port=5000)
+  170  EOL
+  171  vim app.py 
+  172  git add app.py
+  173  git commit -m "Updated app.py to include current time in the response"
+  174  docker-compose -f docker-compose-flask.yaml up -d --build
+  175  #curl http://3.84.51.18:5000
+  176  curl http://3.84.51.18:5000
+  177  docker-compose -f docker-compose-flask.yaml 
+  178  docker-compose -f docker-compose-flask.yaml down
+  179  docker-compose -f docker-compose-flask.yaml up -d --build
+  180  cat app.py
+  181  vim app.py
+  182  clear
+  183  cat > app.py << EOL
+from flask import Flask
+import socket
+import datetime  # Added import for datetime
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  184  docker-compose -f docker-compose-flask.yaml down
+  185  docker-compose -f docker-compose-flask.yaml up -d --build
+  186  docker-compose -f docker-compose-flask.yaml ps
+  187  curl http://3.84.51.18:5000
+  188  curl http://3.84.51.18
+  189  clear
+  190  cat app.py
+  191  docker-compose -f docker-compose-flask.yaml logs web
+  192  clear
+  193  cat > app.py << EOL
+from flask import Flask
+import socket
+import datetime  # Added import for datetime
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  194  docker-compose -f docker-compose-flask.yaml down
+  195  docker-compose -f docker-compose-flask.yaml up -d --build
+  196  docker-compose -f docker-compose-flask.yaml logs web
+  197  curl http://3.84.51.18
+  198  clear
+  199  cat > app.py << EOL
+from flask import Flask
+import socket
+import datetime
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Request received. Time: {current_time}", file=sys.stderr)
+    return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  200  cat nginx.conf
+  201  docker-compose -f docker-compose-flask.yaml down
+  202  docker-compose -f docker-compose-flask.yaml up -d --build
+  203  curl http://3.84.51.18
+  204  cat > app.py << EOL
+from flask import Flask
+import socket
+import datetime
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Request received. Time: {current_time}", file=sys.stderr)
+    return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  205  docker-compose -f docker-compose-flask.yaml down
+  206  docker-compose -f docker-compose-flask.yaml up -d --build
+  207  docker-compose -f docker-compose-flask.yaml logs web
+  208  docker-compose -f docker-compose-flask.yaml ps
+  209  curl http://localhost:5000
+  210  curl http://localhost:5001
+  211  curl http://localhost:5002
+  212  cat > nginx.conf << EOL
+events { worker_connections 1024; }
+http {
+  upstream web {
+    server web:5000;
+    server web:5001;
+    server web:5002;
+  }
+  server {
+    listen 80;
+    location / {
+      proxy_pass http://web;
+      add_header X-Upstream \$upstream_addr;
+    }
+  }
+}
+EOL
+
+  213  docker-compose -f docker-compose-flask.yaml down
+  214  docker-compose -f docker-compose-flask.yaml up -d --build
+  215  curl -v http://3.84.51.18
+  216  cat > app.py << EOL
+from flask import Flask
+import socket
+import datetime
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Request received. Time: {current_time}", file=sys.stderr)
+    return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}\n"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  217  docker-compose -f docker-compose-flask.yaml down
+  218  docker-compose -f docker-compose-flask.yaml up -d --build
+  219  curl -v http://3.84.51.18
+  220  docker-compose -f docker-compose-flask.yaml logs web
+  221  cat > app.py << EOL
+from flask import Flask
+import socket
+import datetime
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Request received. Time: {current_time}", file=sys.stderr)
+    return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}\n"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  222  docker-compose -f docker-compose-flask.yaml down
+  223  docker-compose -f docker-compose-flask.yaml up -d --build
+  224  docker-compose -f docker-compose-flask.yaml logs web
+  225  curl -v http://3.84.51.18
+  226  for i in {1..5}; do curl http://3.84.51.18; done
+  227  docker-compose -f docker-compose-flask.yaml logs web
+  228  cat > app.py << EOL
+from flask import Flask
+import socket
+import datetime
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Request received. Time: {current_time}", file=sys.stderr, flush=True)
+    return f"Hello, Docker! I'm running on host: {hostname}. Current time: {current_time}\n\n"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  229  docker-compose -f docker-compose-flask.yaml down
+  230  docker-compose -f docker-compose-flask.yaml up -d --build
+  231  for i in {1..5}; do curl http://3.84.51.18; done
+  232  clear
+  233  cat > app.py << EOL
+from flask import Flask
+import socket
+import random
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    random_number = random.randint(1, 1000)
+    print(f"Request received. Random number: {random_number}", file=sys.stderr, flush=True)
+    return f"Hello, Docker! I'm running on host: {hostname}. Random number: {random_number}\n\n"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  234  docker-compose -f docker-compose-flask.yaml down
+  235  docker-compose -f docker-compose-flask.yaml up -d --build
+  236  docker-compose -f docker-compose-flask.yaml logs web
+  237  for i in {1..5}; do curl http://3.84.51.18; done
+  238  docker-compose -f docker-compose-flask.yaml logs web
+  239  clear
+  240  cat > app.py << EOL
+from flask import Flask
+import socket
+import random
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    random_number = random.randint(1, 1000)
+    response = f"Hello, Docker! I'm running on host: {hostname}. Random number: {random_number}\n"
+    print(f"Request received. {response}", file=sys.stderr, flush=True)
+    return response
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOL
+
+  241  docker-compose -f docker-compose-flask.yaml down
+  242  docker-compose -f docker-compose-flask.yaml up -d --build
+  243  for i in {1..5}; do curl http://3.84.51.18; done
+  244  docker-compose -f docker-compose-flask.yaml logs web
+  245  docker-compose -f docker-compose-flask.yaml ps
+  246  curl http://172.31.95.13:5000
+  247  clear
+  248  curl http://172.31.95.13:32801
+  249  curl http://172.31.95.13:32802
+  250  curl http://172.31.95.13:32803
+  251  cat > nginx.conf << EOL
+events { worker_connections 1024; }
+
+http {
+  upstream web {
+    server web:5000;
+  }
+
+  server {
+    listen 80;
+    location / {
+      proxy_pass http://web;
+      proxy_set_header Host \$host;
+      proxy_set_header X-Real-IP \$remote_addr;
+      proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+  }
+}
+EOL
+
+  252  docker-compose -f docker-compose-flask.yaml down
+  253  docker-compose -f docker-compose-flask.yaml up -d --build
+  254  curl http://172.31.95.13:32802
+  255  curl -v http://3.84.51.18
+  256  curl http://172.31.95.13
+  257  python3 app.py
+  258  pip3 install flask
+  259  sudo apt-get update
+  260  sudo apt-get install python3-pip
+  261  python3 app.py
+  262  docker-compose -f docker-compose-flask.yaml down
+  263  cat > app.py << EOL
+from flask import Flask, make_response
+import socket
+import random
+import sys
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    hostname = socket.gethostname()
+    random_number = random.randint(1, 1000)
+    response_text = f"Hello, Docker! I'm running on host: {hostname}. Random number: {random_number}\n"
+    print(f"Request received. {response_text}", file=sys.stderr, flush=True)
+    response = make_response(response_text)
+    response.headers['Debug-Message'] = 'This is a debug message'
+    return response
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5001)
+EOL
+
+  264  python3 app.py
+  265  curl http://localhost:5001
+  266  curl http://172.31.95.13:5001
+  267  cat > docker-compose-flask.yaml << EOL
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5001"
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+EOL
+
+  268  cat > nginx.conf << EOL
+events { worker_connections 1024; }
+
+http {
+  upstream web {
+    server web:5001;
+  }
+
+  server {
+    listen 80;
+    location / {
+      proxy_pass http://web;
+      proxy_set_header Host \$host;
+      proxy_set_header X-Real-IP \$remote_addr;
+      add_header X-Debug-Message \$upstream_http_debug_message;
+    }
+  }
+}
+EOL
+
+  269  cat > Dockerfile << EOL
+FROM python:3.8-slim-buster
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python", "app.py"]
+EXPOSE 5001
+EOL
+
+  270  docker-compose -f docker-compose-flask.yaml up -d --build
+  271  curl http://3.84.51.18
+  272  git init
+  273  git add .
+  274  git commit -m "Initial commit with Docker and Flask setup"
+  275  git remote add origin https://github.com/la-belle-femme/REVISION-DOCKER.git
+  276  git push -u origin main
+  277  git pull origin main --allow-unrelated-histories
+  278  git push -u origin main --force
+  279  git rm --cached .git-credentials
+  280  echo ".git-credentials" >> .gitignore
+  281  git filter-branch --force --index-filter "git rm --cached --ignore-unmatch .git-credentials" --prune-empty --tag-name-filter cat -- --all
+  282  git push origin --force --all
+  283  git add .gitignore
+  284  git commit -m "Add .git-credentials to .gitignore"
+  285  sudo apt-get update
+  286  sudo apt-get install -y bfg
+  287  bfg --delete-files .git-credentials
+  288  git reflog expire --expire=now --all && git gc --prune=now --aggressive
+  289  git push origin --force --all
+  290  clear
+  291  git checkout --orphan latest_branch
+  292  git add -A
+  293  git commit -m "Initial commit"
+  294  git branch -D main
+  295  git branch -m main
+  296  git remote set-url origin https://github.com/your-username/new-repo-name.git
+  297  git push -f origin main
+  298  git remote set-url origin https://github.com/your-username/new-repo-name.git
+  299  git remote set-url origin https://github.com/la-belle-femme/REVISION1-DOCKER.git
+  300  git push -f origin main
+  301  history > commnands2.txt
