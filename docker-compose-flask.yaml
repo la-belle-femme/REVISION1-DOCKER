@@ -1,9 +1,12 @@
 version: '3'
 services:
   web:
-    build: .
+    image: bettysami/flask-docker-app:v2
+    deploy:
+      replicas: 3
     ports:
-      - "5001:5001"
+      - "5000-5002:5000"
+
   nginx:
     image: nginx:latest
     volumes:
