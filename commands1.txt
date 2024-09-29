@@ -1,0 +1,147 @@
+sudo apt update && sudo apt upgrade -y
+    2  for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    3  # Add Docker's official GPG key:
+    4  sudo apt-get update
+    5  sudo apt-get install ca-certificates curl
+    6  sudo install -m 0755 -d /etc/apt/keyrings
+    7  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    8  sudo chmod a+r /etc/apt/keyrings/docker.asc
+    9  # Add the repository to Apt sources:
+   10  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+   11    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   12  sudo apt-get update
+   13  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   14  docker --version
+   15  sudo usermod -aG docker ubuntu
+   16  exit
+   17  groups
+   18  sudo -su ubuntu
+   19  groups
+   20  sudo su - ubuntu
+   21  groups
+   22  docker ps
+   23  mkdir flask_docker_app
+   24  cd flask_docker_app
+   25  sudo apt install python3-venv -y
+   26  python3 -m venv venv
+   27  source venv/bin/activate
+   28  pip install Flask
+   29  vim app.py
+   30  pip freeze > requirements.txt
+   31  groups
+   32  sudo su - ubuntu
+   33  vim Dockerfile
+   34  docker build -t flask-docker-app .
+   35  pwd
+   36  ls -la
+   37  pip freeze > requirements.txt
+   38  sudo apt install python3-pip
+   39  docker build -t flask-docker-app .
+   40  docker run -d -p 5000:5000 flask-docker-app
+   41  curl http://3.84.51.18:5000
+   42  docker run -d -p 5000:5000 flask-docker-app
+   43  curl http://3.84.51.18:5000
+   44  docker ps
+   45  docker ps -a
+   46  docker logs befbf363c5f8
+   47  ls -la
+   48  vim app.py
+   49  ls -la
+   50  cat Dockerfile
+   51  docker stop befbf363c5f8
+   52  docker stop 7592d35e399d
+   53  docker rm befbf363c5f8
+   54  docker rm 7592d35e399d
+   55  docker ps -a
+   56  docker build -t flask-docker-app .
+   57  docker images
+   58  docker rmi 4359da9244f2
+   59  docker images
+   60  docker run --rm flask-docker-app ls -la /app
+   61  docker ps -a
+   62  docker images
+   63  docker run -d -p 5000:5000 flask-docker-app
+   64  docker ps -a
+   65  docker logs 200393cd020e
+   66  cat requirements.txt
+   67  echo "Flask==2.0.1" > requirements.txt
+   68  cat requirements.txt
+   69  vim  Dockerfile
+   70  docker build -t flask-docker-app . --no-cache
+   71  docker images
+   72  docker rmi 7b4101452f85
+   73  docker ps -a
+   74  docker stop 200393cd020e
+   75  docker rm 200393cd020e
+   76  docker rmi 7b4101452f85
+   77  docker images
+   78  docker run -d -p 5000:5000 flask-docker-app
+   79  curl http://3.84.51.18:5000
+   80  curl http://172.31.95.13:5000
+   81  docker ps
+   82  docker ps -a
+   83  docker start $(docker ps -aq --filter ancestor=flask-docker-app --latest)
+   84  docker ps -a
+   85  docker logs $(docker ps -aq --filter ancestor=flask-docker-app --latest)
+   86  vim requirements.txt 
+   87  docker images
+   88  docker rmi ad855d8fb54e
+   89  #docker stop 200393cd020e
+   90  docker ps -a
+   91  docker stop a256c89f6340
+   92  docker rmi a256c89f6340
+   93  docker ps -a
+   94  docker stop gifted_ramanujan
+   95  docker rmi gifted_ramanujan
+   96  docker rm gifted_ramanujan
+   97  vim  Dockerfile
+   98  docker build -t flask-docker-app .
+   99  docker run -d -p 5000:5000 flask-docker-app
+  100  curl http://3.84.51.18:5000
+  101  docker run -d -p 5000:5000 flask-docker-app
+  102  curl http://172.31.95.13:5000
+  103  docker login
+  104  docker login -u bettysami
+  105  docker login
+  106  docker login -u bettysami
+  107  #docker tag flask-docker-app bettysami/flask-docker-app
+  108  docker tag flask-docker-app bettysami/flask-docker-app
+  109  docker push bettysami/flask-docker-app
+  110  sudo apt install docker-compose -y
+  111  vim docker-compose-flask.yaml
+  112  vim nginx.conf
+  113  docker-compose -f docker-compose-flask.yaml up -d
+  114  cat docker-compose-flask.yaml
+  115  vim docker-compose-flask.yaml
+  116  docker-compose -f docker-compose-flask.yaml up -d
+  117  docker-compose -f docker-compose-flask.yaml down
+  118  docker-compose -f docker-compose-flask.yaml up -d
+  119  docker-compose -f docker-compose-flask.yaml ps
+  120  git init
+  121  git add .
+  122  git commit -m "Initial commit with Docker and Flask setup"
+  123  git remote add origin https://github.com/la-belle-femme/REVISION-DOCKER.git
+  124  git pull origin main --allow-unrelated-histories
+  125  git add .
+  126  git commit -m "Merge remote changes and resolve conflicts"
+  127  git push -u origin main
+  128  git branch
+  129  git ls-remote --heads origin
+  130  git branch -m master main
+  131  git push -u origin master
+  132  git branch
+  133  git push -u origin main
+  134  git branch
+  135  git push -u origin main
+  136  git config --global credential.helper store
+  137  git push -u origin main
+  138  git fetch origin
+  139  git pull --rebase origin main
+  140  git rebase --continue
+  141  git push -u origin main --force
+  142  history
+  143  history > commands.txt
+  144  cat commands.txt 
+  145  ls commands.txt
+  146  vim commands.txt
+  147  history
